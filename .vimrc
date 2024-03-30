@@ -49,6 +49,9 @@ set encoding=utf-8
 " Auto complete
 Plugin 'Valloric/YouCompleteMe'
 
+" GH copilot
+Plugin 'github/copilot.vim'
+
 let g:ycm_autoclose_preview_window_after_completion=0 "keep up help when opening parenthesis
 map <space>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 

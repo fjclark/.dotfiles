@@ -1,6 +1,6 @@
 # Add rsa key for github
-eval `ssh-agent -s`
-ssh-add ~/.ssh/rsa_key
+#eval `ssh-agent -s`
+#ssh-add ~/.ssh/rsa_key
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -134,25 +134,14 @@ unset __conda_setup
 ###########################################################
 # Manual Changes
 ###########################################################
-# GH Copilot Command Line 
-eval "$(github-copilot-cli alias -- "$0")"
-
-# Openeye
-export OE_LICENSE=/home/finlayclark/.OpenEye/oe_license.txt
-
 # Dotfiles alias
-alias dotfiles=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Pymol
-export PML_D=/home/finlayclark/software/pymol/scripts/default.py # The default script
-
-# MD Engines
-source /usr/local/gromacs/bin/GMXRC
-#test -f /home/finlayclark/software/amber20/amber.sh && source /home/finlayclark/software/amber20/amber.sh
-#export PATH=~/software/NAMD2.14/NAMD_2.14_Linux-x86_64-multicore:$PATH
+export PML_D=$HOME/software/pymol/scripts/default.py # The default script
 
 # Aliases
-alias jcount='squeue -u finlayclark -h | wc -l'
+alias jcount='squeue -u $USER -h | wc -l'
 
 # Functions
 function cdir
@@ -168,15 +157,8 @@ ulimit -Sn 50000
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-  export PATH="${PATH}:/home/finlayclark/.cargo/bin"
+  export PATH="${PATH}:$HOME/.cargo/bin"
 
 
 # Created by `pipx` on 2024-02-17 22:30:38
-export PATH="$PATH:/home/finlayclark/.local/bin"
-
-# Autodock
-#source ./initMGLtools.sh
-
-# Autodock vina
-export PATH="${PATH}:/home/finlayclark/software/autodock_vina/autodock_vina_1_1_2_linux_x86/bin"
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+export PATH="$PATH:$HOME/.local/bin"
